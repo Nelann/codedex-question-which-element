@@ -29,7 +29,12 @@ export default function Results({
       {artwork && (
         <div className="artwork">
           <h3>{artwork.title}</h3>
-          <img src={artwork.primaryImage} alt={artwork.title} />
+          <img
+            src={artwork.primaryImage}
+            alt={artwork.title}
+            loading="lazy"
+            decoding="async"
+          />
           <p>{artwork.artistDisplayName}</p>
           <p>{artwork.objectDate}</p>
         </div>
