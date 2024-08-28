@@ -21,9 +21,15 @@ export default function Results({
 
   return (
     <div>
-      <p>
-        <strong>{name ?? "Anonymous"}</strong>, your element is: {element}
-      </p>
+      {name ? (
+        <p>
+          <strong>{name ?? "Anonymous"}</strong>, your element is: {element}
+        </p>
+      ) : (
+        <p>
+          <strong>Anonymous</strong>, your element is: {element}
+        </p>
+      )}
       {isLoading && <p>Loading...</p>}
       {error && <p>{error}</p>}
       {artwork && (
